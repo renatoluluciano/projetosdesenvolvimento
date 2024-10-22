@@ -1,0 +1,1 @@
+flutter create --project-name=flutterprimeirospassos --org br.com.renatoluciano --platforms android,ios -a kotlin -i swift ./primeirospassos
