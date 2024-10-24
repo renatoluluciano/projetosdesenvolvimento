@@ -27,7 +27,14 @@ class HomePage extends StatelessWidget {
                       builder: (_) =>
                           Detalhe(parametro: 'PArametro Page router')));
                 },
-                child: Text('Detalhe PageRoute'))
+                child: Text('Detalhe PageRoute')),
+            ElevatedButton(
+                onPressed: () async {
+                  var menssagem =
+                      await Navigator.of(context).pushNamed('/detalhe02');
+                  print('mensagem recebida da pagina ${menssagem}');
+                },
+                child: Text('Pagina Detalhe02')),
           ],
         ),
       ),

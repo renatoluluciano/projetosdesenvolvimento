@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_navegacao/core/navigator_observer.dart';
+import 'package:flutter_navegacao/pages/detalhe02_page.dart';
 import 'package:flutter_navegacao/pages/detalhe_page.dart';
 import 'package:flutter_navegacao/pages/home_page.dart';
 
@@ -19,7 +20,6 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-
       onGenerateRoute: (RouteSettings settings) {
         if (settings.name == '/') {
           return MaterialPageRoute(
@@ -37,11 +37,11 @@ class MyApp extends StatelessWidget {
           );
         }
       },
-      // routes: {
-      //   //configuracao das rotas do app
-      //   '/': (_) => HomePage(),
-      //   '/detalhe': (_) => Detalhe()
-      // },
+      routes: {
+        //   //configuracao das rotas do app
+        //   '/': (_) => HomePage(),
+        '/detalhe02': (_) => Detalhe02Page()
+      },
     );
   }
 }
