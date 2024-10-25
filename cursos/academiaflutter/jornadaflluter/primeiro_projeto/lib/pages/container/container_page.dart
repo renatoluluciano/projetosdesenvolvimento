@@ -10,7 +10,7 @@ class ContainerPage extends StatelessWidget {
         title: const Text('Exemplo de Container'),
       ),
       body: Container(
-        width: 200,
+        width: 350,
         height: 200,
         color: Colors.red,
         padding: EdgeInsets.all(40),
