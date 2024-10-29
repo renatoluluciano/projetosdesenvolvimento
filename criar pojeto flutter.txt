@@ -3,3 +3,5 @@ flutter create --project-name=flutterprimeirospassos --org br.com.renatoluciano 
 flutter create --project-name=flutter_navegacao --org br.com.renatoluciano --platforms android,ios,web ./maonamassa_navegacao
 
 flutter create --project-name=flutter_primeiro_projeto --org br.com.renatoluciano --platforms android,ios,web ./primeiro_projeto
+
+flutter create --project-name=agendamento_calendario --org br.com.renatoluciano --platforms android,ios,web ./agendamento_calendario
