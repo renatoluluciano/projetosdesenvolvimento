@@ -46,7 +46,8 @@ class _CalendarSreensState extends State<CalendarSreen> {
           ),
           FloatingActionButton(
             onPressed: () {
-              print(DateFormat('dd/MM/yyyy').format(_selectedDay));
+              Navigator.of(context)
+                  .pushNamed('/eventos', arguments: {'datas': _selectedDay});
             },
             tooltip: 'Imprimir datas selecionadas',
             child: Icon(Icons.print),

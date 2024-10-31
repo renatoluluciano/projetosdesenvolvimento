@@ -1,5 +1,5 @@
-import 'package:agendamento_calendario/sreens/calendar_sreen.dart';
-import 'package:agendamento_calendario/sreens/calendario_evento.dart';
+import 'package:agendamento_calendario/teste_calendario/calendario_evento.dart';
+import 'package:agendamento_calendario/teste_calendario/eventos.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        '/': (_) => CalendarSreen(),
+        '/': (_) => Calendario(),
+        '/eventos': (_) => Eventos(),
       },
     );
   }

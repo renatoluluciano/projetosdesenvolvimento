@@ -1,0 +1,15 @@
+Expanded(
+          child: ListView.separated(
+            padding: const EdgeInsets.all(8),
+            itemCount: _datasSelecionadas.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Container(
+                child: Center(
+                  child: Text('${_datasSelecionadas[index]}'),
+                ),
+              );
+            },
+            separatorBuilder: (BuildContext context, int index) =>
+                const Divider(),
+          ),
+        )
