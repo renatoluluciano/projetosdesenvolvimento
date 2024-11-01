@@ -1,5 +1,8 @@
+import 'package:agendamento_calendario/paginaHome.dart';
+import 'package:agendamento_calendario/sreens/calendario_evento.dart';
 import 'package:agendamento_calendario/teste_calendario/calendario_evento.dart';
 import 'package:agendamento_calendario/teste_calendario/eventos.dart';
+import 'package:agendamento_calendario/teste_calendario/listagemGeral.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,6 +24,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (_) => Calendario(),
         '/eventos': (_) => Eventos(),
+        '/listagem': (_) => ListagemGeral(),
       },
     );
   }

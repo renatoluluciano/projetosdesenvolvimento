@@ -4,6 +4,7 @@ enum PoupMenuPages {
   container,
   rows_columns,
   media_query,
+  formulario,
 }
 
 class HomePage extends StatelessWidget {
@@ -28,6 +29,9 @@ class HomePage extends StatelessWidget {
               case PoupMenuPages.media_query:
                 Navigator.of(context).pushNamed('/media_query');
                 break;
+              case PoupMenuPages.formulario:
+                Navigator.of(context).pushNamed('/formulario');
+                break;
             }
           }, itemBuilder: (BuildContext context) {
             return <PopupMenuItem<PoupMenuPages>>[
@@ -37,7 +41,9 @@ class HomePage extends StatelessWidget {
                   value: PoupMenuPages.rows_columns,
                   child: Text('Rows & Columns')),
               PopupMenuItem<PoupMenuPages>(
-                  value: PoupMenuPages.media_query, child: Text('MediaQuery'))
+                  value: PoupMenuPages.media_query, child: Text('MediaQuery')),
+              PopupMenuItem<PoupMenuPages>(
+                  value: PoupMenuPages.formulario, child: Text('Formulario'))
             ];
           })
         ],

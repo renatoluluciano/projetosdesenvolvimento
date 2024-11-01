@@ -1,4 +1,8 @@
+import 'dart:convert';
+
+import 'package:agendamento_calendario/model/EventoModell.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
@@ -12,17 +16,27 @@ class _CalendarioState extends State<Calendario> {
   CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime _selectedDay = DateTime.now();
   DateTime _focusedDay = DateTime.now();
-  List<String> _datasSelecionadas = [];
+  var eventos = <EventoModeell>[];
 
-  ElevatedButton _confirmarEvento(DateTime _diaSelecionado) {
-    return ElevatedButton(
-        onPressed: () {
-          setState(() {
-            _datasSelecionadas.add(
-                DateFormat('dd/MM/yyyy').format(_diaSelecionado).toString());
-          });
-        },
-        child: Text('Confirmar marcação'));
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _carregarEventos();
+  }
+
+  Future<void> _carregarEventos() async {
+    final eventosJson =
+        await rootBundle.loadString('assets/exemplo_marcacao.json');
+
+    setState(() {
+      List eventoList = json.decode(eventosJson);
+      eventos = eventoList
+          .map<EventoModeell>((lista) => EventoModeell.fromMap(lista))
+          .toList();
+
+      print(eventos);
+    });
   }
 
   @override
@@ -49,9 +63,9 @@ class _CalendarioState extends State<Calendario> {
                 setState(() {
                   _selectedDay = selectedDay;
                   _focusedDay = focusedDay;
-
+                  print('printando o dia no calendario ${_selectedDay}');
                   //_datasSelecionadas.add(
-                  //  DateFormat('dd/MM/yyyy').format(_selectedDay).toString());
+                  //  DateFormat('dd/MM/yyyy').format(DateTime.parse(evento.data)).toString());
                 });
               },
               onPageChanged: (focusedDay) {
@@ -72,9 +86,13 @@ class _CalendarioState extends State<Calendario> {
             height: 50,
             color: Colors.red.shade300,
             child: ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                  'Data Selecionada ${DateFormat('dd/MM/yyyy').format(_selectedDay).toString()}'),
+              onPressed: () {
+                var dataString =
+                    DateFormat('yyyy-MM-dd').format(_selectedDay).toString();
+                Navigator.of(context)
+                    .pushNamed('/listagem', arguments: {'data': dataString});
+              },
+              child: const Text('Verificar'),
             ),
           )),
         )
