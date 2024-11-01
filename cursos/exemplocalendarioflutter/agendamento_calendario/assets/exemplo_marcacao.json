@@ -1,42 +1,107 @@
 [
   {
-    "nome": "Evento 1",
-    "data": "2024-11-01"
+      "nome": "Renato Antonio",
+      "data": "2024-11-01",
+      "tipoAfastamento": "Folga Compensatoria"
   },
   {
-    "nome": "Evento 2",
-    "data": "2024-11-05"
+      "nome": "João Silva",
+      "data": "2024-11-05",
+      "tipoAfastamento": "Licença Médica"
   },
   {
-    "nome": "Evento 3",
-    "data": "2024-11-15"
+      "nome": "Maria Souza",
+      "data": "2024-11-10",
+      "tipoAfastamento": "Férias"
   },
   {
-    "nome": "Evento 4",
-    "data": "2024-11-20"
+      "nome": "Pedro Oliveira",
+      "data": "2024-11-12",
+      "tipoAfastamento": "Folga Compensatoria"
   },
   {
-    "nome": "Evento 5",
-    "data": "2024-11-25"
+      "nome": "Ana Clara",
+      "data": "2024-11-15",
+      "tipoAfastamento": "Licença Maternidade"
   },
   {
-    "nome": "Evento 6",
-    "data": "2024-12-01"
+      "nome": "Luiz Carlos",
+      "data": "2024-11-18",
+      "tipoAfastamento": "Férias"
   },
   {
-    "nome": "Evento 7",
-    "data": "2024-12-10"
+      "nome": "Juliana Martins",
+      "data": "2024-11-20",
+      "tipoAfastamento": "Licença Médica"
   },
   {
-    "nome": "Evento 8",
-    "data": "2024-12-15"
+      "nome": "Rafael Alves",
+      "data": "2024-11-22",
+      "tipoAfastamento": "Folga Compensatoria"
   },
   {
-    "nome": "Evento 9",
-    "data": "2024-12-20"
+      "nome": "Gabriela Silva",
+      "data": "2024-11-25",
+      "tipoAfastamento": "Férias"
   },
   {
-    "nome": "Evento 10",
-    "data": "2024-12-25"
+      "nome": "Vinicius Costa",
+      "data": "2024-12-01",
+      "tipoAfastamento": "Licença Médica"
+  },
+  {
+      "nome": "Beatriz Faria",
+      "data": "2024-12-01",
+      "tipoAfastamento": "Folga Compensatoria"
+  },
+  {
+      "nome": "Thiago Santos",
+      "data": "2024-12-01",
+      "tipoAfastamento": "Férias"
+  },
+  {
+      "nome": "Larissa Moura",
+      "data": "2024-12-01",
+      "tipoAfastamento": "Licença Maternidade"
+  },
+  {
+      "nome": "Felipe Rocha",
+      "data": "2024-12-01",
+      "tipoAfastamento": "Folga Compensatoria"
+  },
+  {
+      "nome": "Caroline Dias",
+      "data": "2024-12-01",
+      "tipoAfastamento": "Férias"
+  },
+  {
+      "nome": "Marcos Lima",
+      "data": "2024-12-01",
+      "tipoAfastamento": "Licença Médica"
+  },
+  {
+      "nome": "Aline Gomes",
+      "data": "2024-12-18",
+      "tipoAfastamento": "Folga Compensatoria"
+  },
+  {
+      "nome": "Eduardo Castro",
+      "data": "2024-12-20",
+      "tipoAfastamento": "Férias"
+  },
+  {
+      "nome": "Mônica Teixeira",
+      "data": "2024-12-22",
+      "tipoAfastamento": "Licença Maternidade"
+  },
+  {
+      "nome": "Leonardo Marques",
+      "data": "2024-12-25",
+      "tipoAfastamento": "Folga Compensatoria"
+  },
+  {
+      "nome": "Isabela Rodrigues",
+      "data": "2024-12-28",
+      "tipoAfastamento": "Férias"
   }
 ]

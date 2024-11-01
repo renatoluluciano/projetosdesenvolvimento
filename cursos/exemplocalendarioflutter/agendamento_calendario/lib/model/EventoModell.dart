@@ -4,13 +4,15 @@ class EventoModeell {
   EventoModeell({
     required this.nome,
     required this.data,
+    required this.tipoAfastamento,
   });
 
   final String nome;
   final String data;
+  final String tipoAfastamento;
 
   Map<String, dynamic> toMap() {
-    return {'nome': nome, 'data': data};
+    return {'nome': nome, 'data': data, 'tipoAfastamento': tipoAfastamento};
   }
 
   String toJson() => json.encode(toMap());
@@ -19,6 +21,7 @@ class EventoModeell {
     return EventoModeell(
       nome: map['nome'] ?? 'Não Carregou',
       data: map['data'] ?? 'Não Carregou',
+      tipoAfastamento: map['tipoAfastamento'] ?? 'Não Carregou',
     );
   }
 

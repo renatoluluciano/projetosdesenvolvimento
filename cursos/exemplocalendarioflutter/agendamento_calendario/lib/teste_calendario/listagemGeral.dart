@@ -44,6 +44,8 @@ class _ListagemGeralState extends State<ListagemGeral> {
 
   @override
   Widget build(BuildContext context) {
+    EventoModeell eventoSelecionado;
+    var count = 0;
     return Scaffold(
         appBar: AppBar(
           title: const Text('Listagem do Json'),
@@ -55,11 +57,22 @@ class _ListagemGeralState extends State<ListagemGeral> {
 
               print('Data da Lista: ${evento.data}');
               print('Data Calendario: ${dataSelecionada}');
-
-              return ListTile(
-                title: Text('Nome: ${evento.nome} '),
-                subtitle: Text('Data: ${evento.data}'),
-              );
+              while (count < eventos.length) {
+                if (evento.data == dataSelecionada) {
+                  eventoSelecionado = eventos[index];
+                  return Container(
+                    child: Row(
+                      children: [
+                        Column(children: [
+                          Text('Nome: ${eventoSelecionado.nome} '),
+                          Text('Data: ${eventoSelecionado.data}'),
+                        ]),
+                      ],
+                    ),
+                  );
+                }
+                return Container();
+              }
             }));
   }
 }
