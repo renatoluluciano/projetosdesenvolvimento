@@ -9,10 +9,10 @@ import 'package:intl/intl.dart';
 
 class Calendario extends StatefulWidget {
   @override
-  _Calendario01State createState() => _Calendario01State();
+  _CalendarioState createState() => _CalendarioState();
 }
 
-class _Calendario01State extends State<Calendario> {
+class _CalendarioState extends State<Calendario> {
   CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime _selectedDay = DateTime.now();
   DateTime _focusedDay = DateTime.now();
@@ -94,6 +94,11 @@ class _Calendario01State extends State<Calendario> {
                   _focusedDay = focusedDay;
                 },
               ),
+            ),
+            ElevatedButton.icon(
+              onPressed: () {},
+              icon: const Icon(Icons.add),
+              label: Text('Novo Agendamento'),
             ),
             Expanded(
               flex: 10,
