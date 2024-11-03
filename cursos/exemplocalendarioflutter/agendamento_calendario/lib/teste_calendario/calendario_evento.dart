@@ -89,37 +89,42 @@ class _CalendarioState extends State<Calendario> {
         ),
         body: Column(
           children: [
-            Container(
-              child: TableCalendar(
-                firstDay: DateTime(365),
-                lastDay: DateTime(2250),
-                focusedDay: _focusedDay,
-                calendarFormat: _calendarFormat,
-                selectedDayPredicate: (day) {
-                  return isSameDay(_selectedDay, day);
-                },
-                onDaySelected: (selectedDay, focusedDay) {
-                  setState(() {
-                    _selectedDay = selectedDay;
-                    _focusedDay = focusedDay;
-                    dataFormatada = DateFormat('yyyy-MM-dd')
-                        .format(_selectedDay)
-                        .toString();
+            Column(
+              children: [
+                Container(
+                  child: TableCalendar(
+                    firstDay: DateTime(365),
+                    lastDay: DateTime(2250),
+                    focusedDay: _focusedDay,
+                    calendarFormat: _calendarFormat,
+                    selectedDayPredicate: (day) {
+                      return isSameDay(_selectedDay, day);
+                    },
+                    onDaySelected: (selectedDay, focusedDay) {
+                      setState(() {
+                        _selectedDay = selectedDay;
+                        _focusedDay = focusedDay;
+                        dataFormatada = DateFormat('yyyy-MM-dd')
+                            .format(_selectedDay)
+                            .toString();
 
-                    print('printando o dia no calendario01 ${dataFormatada}');
-                  });
-                },
-                onPageChanged: (focusedDay) {
-                  _focusedDay = focusedDay;
-                },
-              ),
-            ),
-            ElevatedButton.icon(
-              onPressed: () {
-                _dataPicker();
-              },
-              icon: const Icon(Icons.add),
-              label: Text('Novo Agendamento'),
+                        print(
+                            'printando o dia no calendario01 ${dataFormatada}');
+                      });
+                    },
+                    onPageChanged: (focusedDay) {
+                      _focusedDay = focusedDay;
+                    },
+                  ),
+                ),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    _dataPicker();
+                  },
+                  icon: const Icon(Icons.add),
+                  label: Text('Novo Agendamento'),
+                ),
+              ],
             ),
             Expanded(
               flex: 10,
