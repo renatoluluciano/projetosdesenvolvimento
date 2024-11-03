@@ -4,7 +4,6 @@ import 'package:agendamento_calendario/model/EventoModell.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:table_calendar/table_calendar.dart';
-
 import 'package:intl/intl.dart';
 
 class Calendario extends StatefulWidget {
@@ -16,6 +15,8 @@ class _CalendarioState extends State<Calendario> {
   CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime _selectedDay = DateTime.now();
   DateTime _focusedDay = DateTime.now();
+  DateTime _selecteDayDialog = DateTime.now();
+
   String? dataFormatada;
   var eventos = <EventoModeell>[];
 
@@ -38,24 +39,42 @@ class _CalendarioState extends State<Calendario> {
     });
   }
 
-  Container _listaAgendados(
-      List<EventoModeell> eventos, dynamic dataSelecionada) {
-    print(
-        'Dentro do metodo data selecionada: dataSelecionada: ${dataSelecionada}');
-    final mapAgendados = <String, String>{};
-    for (var evento in eventos) {
-      var nome = evento.nome;
-      var data = evento.data;
-      var afastamentoTipo = evento.tipoAfastamento;
-      print('No For nome: ${nome} , data: ${data} ');
-      if (dataSelecionada == data) {}
-      mapAgendados['nome'] = nome;
-      mapAgendados['data'] = data;
-      mapAgendados['tipoAfastamentno'] = afastamentoTipo;
+  Future<void> _dataPicker() async {
+    DateTime? _picked = await showDatePicker(
+        context: context, firstDate: DateTime.now(), lastDate: DateTime(2025));
+    if (_picked != null) {
+      setState(() {
+        _selecteDayDialog = _picked;
+      });
+      String dataFormatadaPicke =
+          DateFormat('dd/MM/yyyy').format(_selecteDayDialog).toString();
+      print('imprimindo selecao datapicker');
+      print(dataFormatadaPicke);
+      showDialog(
+          context: context,
+          builder: (context) {
+            return SimpleDialog(
+              contentPadding: EdgeInsets.all(10),
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child:
+                      Text('Confirmar ${dataFormatadaPicke} para Agendamento?'),
+                ),
+                ElevatedButton.icon(
+                  onPressed: () => Navigator.of(context).pop(),
+                  icon: Icon(Icons.cancel),
+                  label: Text('Cancelar'),
+                ),
+                ElevatedButton.icon(
+                  onPressed: () => Navigator.of(context).pop(),
+                  icon: Icon(Icons.add_box),
+                  label: Text('Confirmar'),
+                ),
+              ],
+            );
+          });
     }
-    return Container(
-      child: Text('${mapAgendados}'),
-    );
   }
 
   @override
@@ -66,7 +85,7 @@ class _CalendarioState extends State<Calendario> {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('Agendamentos'),
+          title: Text('Gerenciador de Afastamentos'),
         ),
         body: Column(
           children: [
@@ -96,7 +115,9 @@ class _CalendarioState extends State<Calendario> {
               ),
             ),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                _dataPicker();
+              },
               icon: const Icon(Icons.add),
               label: Text('Novo Agendamento'),
             ),

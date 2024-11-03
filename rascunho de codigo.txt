@@ -1,0 +1,36 @@
+child: Center(
+              child: Container(
+            height: 50,
+            color: Colors.red.shade300,
+            child: ElevatedButton(
+              onPressed: () {
+                var dataString =
+                    DateFormat('yyyy-MM-dd').format(_selectedDay).toString();
+                Navigator.of(context)
+                    .pushNamed('/listagem', arguments: {'data': dataString});
+              },
+              child: const Text('Verificar'),
+            ),
+          )),
+
+
+
+{
+    "nome": "Renato Antonio",
+    "data": "2024-11-01"
+    "tipoAfastamento" : "Folga Compensatoria"
+  }
+
+Container(
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade200,
+                              border: Border.all(width: 2),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Column(children: [
+                              Text('Nome: ${eventoSelecionado.nome} '),
+                              Text('Data: ${eventoSelecionado.data}'),
+                              Text(
+                                  'Afastamento: ${eventoSelecionado.tipoAfastamento}'),
+                            ]),
+                          ),
