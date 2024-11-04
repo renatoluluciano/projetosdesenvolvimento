@@ -1,0 +1,94 @@
+{
+    "agendamentos": [
+        {
+            "id": 1,
+            "nomePolicial": "Renato Luciano",
+            "dataAfastamento": "15-12-2024",
+            "tipoAfastamento": "FERIAS"
+        },
+        {
+            "id": 2,
+            "nomePolicial": "João Silva",
+            "dataAfastamento": "15-12-2024",
+            "tipoAfastamento": "FOLGABH"
+        },
+        {
+            "id": 3,
+            "nomePolicial": "Maria Souza",
+            "dataAfastamento": "15-12-2024",
+            "tipoAfastamento": "ABONO"
+        },
+        {
+            "id": 4,
+            "nomePolicial": "Pedro Oliveira",
+            "dataAfastamento": "15-12-2024",
+            "tipoAfastamento": "LICENCA_PREMIO"
+        },
+        {
+            "id": 5,
+            "nomePolicial": "Ana Clara",
+            "dataAfastamento": "15-12-2024",
+            "tipoAfastamento": "FERIAS"
+        },
+        {
+            "id": 6,
+            "nomePolicial": "Luiz Carlos",
+            "dataAfastamento": "05-12-2024",
+            "tipoAfastamento": "FOLGABH"
+        },
+        {
+            "id": 7,
+            "nomePolicial": "Juliana Martins",
+            "dataAfastamento": "05-12-2024",
+            "tipoAfastamento": "ABONO"
+        },
+        {
+            "id": 8,
+            "nomePolicial": "Rafael Alves",
+            "dataAfastamento": "05-12-2024",
+            "tipoAfastamento": "LICENCA_PREMIO"
+        },
+        {
+            "id": 9,
+            "nomePolicial": "Gabriela Silva",
+            "dataAfastamento": "05-12-2024",
+            "tipoAfastamento": "FERIAS"
+        },
+        {
+            "id": 10,
+            "nomePolicial": "Vinicius Costa",
+            "dataAfastamento": "25-11-2024",
+            "tipoAfastamento": "FOLGABH"
+        },
+        {
+            "id": 11,
+            "nomePolicial": "Beatriz Faria",
+            "dataAfastamento": "20-11-2024",
+            "tipoAfastamento": "ABONO"
+        },
+        {
+            "id": 12,
+            "nomePolicial": "Thiago Santos",
+            "dataAfastamento": "15-11-2024",
+            "tipoAfastamento": "LICENCA_PREMIO"
+        },
+        {
+            "id": 13,
+            "nomePolicial": "Larissa Moura",
+            "dataAfastamento": "10-11-2024",
+            "tipoAfastamento": "FERIAS"
+        },
+        {
+            "id": 14,
+            "nomePolicial": "Felipe Rocha",
+            "dataAfastamento": "05-11-2024",
+            "tipoAfastamento": "FOLGABH"
+        },
+        {
+            "id": 15,
+            "nomePolicial": "Caroline Dias",
+            "dataAfastamento": "01-11-2024",
+            "tipoAfastamento": "ABONO"
+        }
+    ]
+}

@@ -37,12 +37,10 @@ public class AgendamentoServico {
         
         respostaModelo.nomeVazio();
         return new ResponseEntity<>(respostaModelo, HttpStatus.BAD_REQUEST);
-    }else if(agendamentoModell.getDataInicio().equals("")){
+    }else if(agendamentoModell.getDataAfastamento().equals("")){
         respostaModelo.dataInicioVazio();
         return new ResponseEntity<>(respostaModelo, HttpStatus.BAD_REQUEST);
-    }else if(agendamentoModell.getDataFinal().equals("")){
-        respostaModelo.dataFinalVazio();
-        return new ResponseEntity<>(respostaModelo, HttpStatus.BAD_REQUEST);
+            
      }else if(agendamentoModell.getTipoAfastamento().equals("")){
         respostaModelo.tipoAfastamentoVazio();
         return new ResponseEntity<>(respostaModelo, HttpStatus.BAD_REQUEST);

@@ -28,9 +28,7 @@ public class AgendamentoModell {
     private Long agendamentoId;
     private String nomePolicial;
     @JsonFormat(pattern="dd-MM-yyyy")   
-    private Calendar dataInicio;
-    @JsonFormat(pattern="dd-MM-yyyy")   
-    private Calendar dataFinal;
+    private Calendar dataAfastamento;
     @Enumerated(EnumType.STRING)
     private CategoriaAfastamento tipoAfastamento;    
 
