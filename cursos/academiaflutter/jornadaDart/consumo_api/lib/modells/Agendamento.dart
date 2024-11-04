@@ -10,7 +10,7 @@ class Agendamento {
 
   int id;
   String nomePolicial;
-  DateTime dataAfastamento;
+  String dataAfastamento;
   String tipoAfastamento;
 
   //transforma o Map em uma instancia em um objeto
@@ -36,4 +36,13 @@ class Agendamento {
 
   factory Agendamento.fromJson(String json) =>
       Agendamento.fromMap(jsonDecode(json));
+
+  @override
+  String toString() {
+    return '''
+Agendamento: $nomePolicial,
+Data: $dataAfastamento, $tipoAfastamento
+
+''';
+  }
 }

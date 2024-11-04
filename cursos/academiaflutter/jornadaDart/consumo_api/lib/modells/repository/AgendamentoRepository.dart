@@ -4,9 +4,12 @@ import 'package:consumo_api/modells/Agendamento.dart';
 import 'package:http/http.dart' as http;
 
 class Agendamentorepository {
+  String uriAgendamentoSpring = 'http://localhost:8080/listar';
+  String uriAgendamentoJsonRest = 'http://localhost:3080/agendamentos';
+
   Future<List<Agendamento>> buscarTodos() async {
     final agendamentosResponse =
-        await http.get(Uri.parse('http://localhost:3080/agendamentos'));
+        await http.get(Uri.parse(uriAgendamentoSpring));
 
     //Converter os dados para um Modelo
 
