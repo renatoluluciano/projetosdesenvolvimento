@@ -1,5 +1,5 @@
 name: Json Rest Server
-port: 8080
+port: 3080
 host: 0.0.0.0
 database: database.json
 

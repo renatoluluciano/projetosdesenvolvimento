@@ -1,5 +1,3 @@
-import 'package:alunos_cli/alunos_cli.dart' as alunos_cli;
+import 'package:args/args.dart';
 
-void main(List<String> arguments) {
-  print('Hello world: ${alunos_cli.calculate()}!');
-}
+void main(List<String> arguments) {}
