@@ -10,7 +10,7 @@ class StudentyRepository {
         await http.get(Uri.parse('http://localhost:3080/students'));
 
     if (studentResult != 200) {
-      throw Exception();
+      throw Exception('Deu erro aqui');
     }
 
     final studentsData = jsonDecode(studentResult.body);
@@ -35,9 +35,9 @@ class StudentyRepository {
     return Student.fromJson(studentResult.body);
   }
 
-  Future<void> insert(Student student) {}
+  // Future<void> insert(Student student) {}
 
-  Future<void> update(Student student) {}
+  // Future<void> update(Student student) {}
 
-  Future<void> deleteById(int id) {}
+  // Future<void> deleteById(int id) {}
 }
