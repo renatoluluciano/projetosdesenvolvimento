@@ -2,27 +2,22 @@ import 'dart:math';
 
 import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
+import 'package:gerenciador_estados/changeNotifier/change_notifier_controller.dart';
 import 'package:gerenciador_estados/widgets/imc_gauge.dart';
 import 'package:intl/intl.dart';
 
-class ImcSetstatePage extends StatefulWidget {
-  const ImcSetstatePage({super.key});
+class ChangeNotifierPage extends StatefulWidget {
+  const ChangeNotifierPage({super.key});
 
   @override
-  State<ImcSetstatePage> createState() => _ImcSetstatePageState();
+  State<ChangeNotifierPage> createState() => _ChangeNotifierPageState();
 }
 
-class _ImcSetstatePageState extends State<ImcSetstatePage> {
+class _ChangeNotifierPageState extends State<ChangeNotifierPage> {
+  final controller = ChangeNotifierController();
   final pesoController = TextEditingController();
   final alturaController = TextEditingController();
-  var imc = 0.0;
   var formKey = GlobalKey<FormState>();
-
-  void _calcularImc(double peso, double altura) {
-    setState(() {
-      imc = peso / pow(altura, 2);
-    });
-  }
 
   @override
   void dispose() {
@@ -35,7 +30,7 @@ class _ImcSetstatePageState extends State<ImcSetstatePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('IMC PAGE SETSTATE'),
+        title: const Text('IMC PAGE CHANGE NOTIFIER'),
       ),
       body: SingleChildScrollView(
         child: Form(
@@ -44,7 +39,11 @@ class _ImcSetstatePageState extends State<ImcSetstatePage> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                ImcGauge(imc: imc),
+                AnimatedBuilder(
+                    animation: controller,
+                    builder: (context, child) {
+                      return ImcGauge(imc: controller.imc);
+                    }),
                 SizedBox(
                   height: 20,
                 ),
@@ -99,7 +98,7 @@ class _ImcSetstatePageState extends State<ImcSetstatePage> {
                             formater.parse(pesoController.text) as double;
                         double altura =
                             formater.parse(alturaController.text) as double;
-                        _calcularImc(peso, altura);
+                        controller.calcularIMC(peso: peso, altura: altura);
                       }
                     },
                     child: Text('Calcular IMC')),

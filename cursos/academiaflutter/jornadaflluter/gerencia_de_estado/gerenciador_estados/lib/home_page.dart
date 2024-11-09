@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gerenciador_estados/bloc_pattern/imc_blocPattern_page.dart';
+import 'package:gerenciador_estados/changeNotifier/change_notifier.dart';
 import 'package:gerenciador_estados/setState/imc_setstate_page.dart';
+import 'package:gerenciador_estados/value_notifier/value_notifier_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -27,15 +30,15 @@ class HomePage extends StatelessWidget {
               child: Text('SetState'),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => _goToPage(context, const ValueNotifierPage()),
               child: Text('ValueNotifier'),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => _goToPage(context, const ChangeNotifierPage()),
               child: Text('ChangeNotifier'),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => _goToPage(context, const ImcBlocPatternPage()),
               child: Text('Bloc Pattern (Streams)'),
             )
           ],

@@ -7,3 +7,5 @@ flutter create --project-name=flutter_primeiro_projeto --org br.com.renatolucian
 flutter create --project-name=agendamento_calendario --org br.com.renatoluciano --platforms android,ios,web ./agendamento_calendario
 
 flutter create --project-name=gerenciador_afastamentos --org br.com.renatoluciano --platforms android,ios,web ./gerenciador_afastamentos
+
+flutter create --project-name=gerenciador_estados --org br.com.renatoluciano --platforms android,ios,web ./gerenciador_estados

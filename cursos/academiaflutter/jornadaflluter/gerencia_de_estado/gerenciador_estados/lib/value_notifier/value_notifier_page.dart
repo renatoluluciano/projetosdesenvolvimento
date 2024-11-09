@@ -5,22 +5,25 @@ import 'package:flutter/material.dart';
 import 'package:gerenciador_estados/widgets/imc_gauge.dart';
 import 'package:intl/intl.dart';
 
-class ImcSetstatePage extends StatefulWidget {
-  const ImcSetstatePage({super.key});
+class ValueNotifierPage extends StatefulWidget {
+  const ValueNotifierPage({super.key});
 
   @override
-  State<ImcSetstatePage> createState() => _ImcSetstatePageState();
+  State<ValueNotifierPage> createState() => _ValueNotifierPageState();
 }
 
-class _ImcSetstatePageState extends State<ImcSetstatePage> {
+//valuenotifier rebuild somente os valores e não a tela toda diferente do SetState
+
+class _ValueNotifierPageState extends State<ValueNotifierPage> {
   final pesoController = TextEditingController();
   final alturaController = TextEditingController();
-  var imc = 0.0;
+  var imc = ValueNotifier(0.0);
   var formKey = GlobalKey<FormState>();
 
   void _calcularImc(double peso, double altura) {
+    imc.value = 0;
     setState(() {
-      imc = peso / pow(altura, 2);
+      imc.value = (peso / pow(altura, 2));
     });
   }
 
@@ -35,7 +38,7 @@ class _ImcSetstatePageState extends State<ImcSetstatePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('IMC PAGE SETSTATE'),
+        title: const Text('IMC PAGE NOTIFIER'),
       ),
       body: SingleChildScrollView(
         child: Form(
@@ -44,7 +47,12 @@ class _ImcSetstatePageState extends State<ImcSetstatePage> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                ImcGauge(imc: imc),
+                ValueListenableBuilder<double>(
+                  valueListenable: imc,
+                  builder: (_, imcValue, __) {
+                    return ImcGauge(imc: imcValue);
+                  },
+                ),
                 SizedBox(
                   height: 20,
                 ),
