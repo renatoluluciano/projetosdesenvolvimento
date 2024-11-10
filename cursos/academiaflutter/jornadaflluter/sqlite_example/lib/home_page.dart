@@ -14,7 +14,16 @@ class _HomePageState extends State<HomePage> {
     // TODO: implement initState
     super.initState();
 
-    DataBaseSqLite().openConnection();
+    _dataBase();
+  }
+
+  Future<void> _dataBase() async {
+    final dataBase = await DataBaseSqLite().openConnection();
+
+    //dataBase.insert('teste', {'nome': 'Renato Luciano'});
+    //dataBase.delete('teste', where: 'id = ?', whereArgs: ['1']);
+    dataBase.update('teste', {'nome': 'Gael Luciano'},
+        where: 'id = ?', whereArgs: ['2']);
   }
 
   @override

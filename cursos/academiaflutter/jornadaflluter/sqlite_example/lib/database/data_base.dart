@@ -2,13 +2,13 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DataBaseSqLite {
-  Future<void> openConnection() async {
-    var dataBasePath = await getDatabasesPath();
+  Future<Database> openConnection() async {
+    final dataBasePath = await getDatabasesPath();
 
     final dataBaseFinalLite = join(dataBasePath, 'SQLITE_EXAMPLE');
 
     //estruturação do banco de dados SQLITE
-    await openDatabase(
+    return await openDatabase(
       dataBaseFinalLite,
       version: 2,
       onConfigure: (db) async {
