@@ -11,3 +11,9 @@ flutter create --project-name=gerenciador_afastamentos --org br.com.renatolucian
 flutter create --project-name=gerenciador_estados --org br.com.renatoluciano --platforms android,ios,web ./gerenciador_estados
 
 flutter create --project-name=flutter_inherited --org br.com.renatoluciano --platforms android,ios,web ./flutter_inherited
+
+
+
+
+flutter create --project-name=flutter_provider_example --org br.com.renatoluciano --platforms android,ios,web ./provider_example
+
