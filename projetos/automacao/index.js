@@ -48,9 +48,9 @@ const puppeteer = require('puppeteer');
     
 
     async function fazerLogin() {
-        await page.type('xpath=//*[@id="username"]', '16881761');
+        await page.type('xpath=//*[@id="username"]', '');
     
-        await page.type('xpath=//*[@id="password"]', 'Gael@0611');
+        await page.type('xpath=//*[@id="password"]', '');
     
         await page.click('xpath=//*[@id="btnEmitir"]/span[2]');
     
